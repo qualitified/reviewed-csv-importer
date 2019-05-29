@@ -1,0 +1,16 @@
+org/nuxeo/ecm/csv/core/CSVImportLog$Status.class
+org/nuxeo/ecm/csv/core/CSVImporterOptions$Builder.class
+org/nuxeo/ecm/csv/core/operation/CSVImportOperation.class
+org/nuxeo/ecm/csv/core/CSVImportId.class
+org/nuxeo/ecm/csv/core/CSVImporterOptions$ImportMode.class
+org/nuxeo/ecm/csv/core/DefaultCSVImporterDocumentFactory.class
+org/nuxeo/ecm/csv/core/CSVImportStatus$State.class
+org/nuxeo/ecm/csv/core/Constants.class
+org/nuxeo/ecm/csv/core/CSVImportStatus.class
+org/nuxeo/ecm/csv/core/CSVImportResult.class
+org/nuxeo/ecm/csv/core/CSVImporterOptions.class
+org/nuxeo/ecm/csv/core/CSVImportLog.class
+org/nuxeo/ecm/csv/core/CSVImporterImpl.class
+org/nuxeo/ecm/csv/core/CSVImporterWork.class
+org/nuxeo/ecm/csv/core/CSVImporter.class
+org/nuxeo/ecm/csv/core/CSVImporterDocumentFactory.class

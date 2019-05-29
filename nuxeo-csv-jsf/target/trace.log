@@ -1,0 +1,9 @@
+10:06:19,461 main WARN  [NuxeoConnectionManagerConfiguration] maxActive deprecated dbcp pool attribute usage, should use maxPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:19,463 main WARN  [NuxeoConnectionManagerConfiguration] maxIdle deprecated dbcp pool attribute usage, should use minPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:19,464 main WARN  [NuxeoConnectionManagerConfiguration] maxWait deprecated dbcp pool attribute usage, should use blockingTimeoutMillis geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:20,105 main ERROR [OSGiRuntimeService] Nuxeo Platform Started
+======================================================================
+= Component Loading Status: Pending: 0 / Missing: 1 / Unstarted: 0 / Total: 78
+  * service:org.nuxeo.ecm.csv.core.operation.contrib references missing [target=org.nuxeo.ecm.core.operation.OperationServiceComponent;point=operations]
+====================================================================== {{fState,beforeRun}}
+)

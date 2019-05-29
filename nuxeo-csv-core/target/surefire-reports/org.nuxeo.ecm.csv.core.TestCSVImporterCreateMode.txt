@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.nuxeo.ecm.csv.core.TestCSVImporterCreateMode
+-------------------------------------------------------------------------------
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.554 sec - in org.nuxeo.ecm.csv.core.TestCSVImporterCreateMode

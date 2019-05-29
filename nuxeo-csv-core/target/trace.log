@@ -1,0 +1,64 @@
+10:06:11,456 main WARN  [NuxeoConnectionManagerConfiguration] maxActive deprecated dbcp pool attribute usage, should use maxPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:11,460 main WARN  [NuxeoConnectionManagerConfiguration] maxIdle deprecated dbcp pool attribute usage, should use minPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:11,460 main WARN  [NuxeoConnectionManagerConfiguration] maxWait deprecated dbcp pool attribute usage, should use blockingTimeoutMillis geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:12,144 main ERROR [OSGiRuntimeService] Nuxeo Platform Started
+======================================================================
+= Component Loading Status: Pending: 0 / Missing: 1 / Unstarted: 0 / Total: 76
+  * service:org.nuxeo.ecm.csv.core.operation.contrib references missing [target=org.nuxeo.ecm.core.operation.OperationServiceComponent;point=operations]
+====================================================================== {{fState,beforeRun}}
+)10:06:12,243 Nuxeo-Work-csvImporter-1:test:/:csvImport:2dc74e9f4c19756396ee44c05c5bb64b ERROR [AbstractWork] Exception during work: CSVImporterWork(, Progress(?%, ?/0), Importing) {{fState,beforeRun}}
+)java.lang.NullPointerException
+	at org.nuxeo.runtime.api.Framework.loginAsUser(Framework.java:330)
+	at org.nuxeo.ecm.core.work.AbstractWork.openUserSession(AbstractWork.java:286)
+	at org.nuxeo.ecm.csv.core.CSVImporterWork.work(CSVImporterWork.java:225)
+	at org.nuxeo.ecm.core.work.AbstractWork.runWorkWithTransaction(AbstractWork.java:416)
+	at org.nuxeo.ecm.core.work.AbstractWork.runWorkWithTransactionAndCheckExceptions(AbstractWork.java:377)
+	at org.nuxeo.ecm.core.work.AbstractWork.run(AbstractWork.java:338)
+	at org.nuxeo.ecm.core.work.WorkHolder.run(WorkHolder.java:57)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+10:06:12,248 Nuxeo-Work-csvImporter-1 ERROR [WorkManagerImpl$NamedThreadFactory$1] Uncaught error on thread Nuxeo-Work-csvImporter-1 {{fState,beforeRun}}
+)java.lang.NullPointerException
+	at org.nuxeo.runtime.api.Framework.loginAsUser(Framework.java:330)
+	at org.nuxeo.ecm.core.work.AbstractWork.openUserSession(AbstractWork.java:286)
+	at org.nuxeo.ecm.csv.core.CSVImporterWork.work(CSVImporterWork.java:225)
+	at org.nuxeo.ecm.core.work.AbstractWork.runWorkWithTransaction(AbstractWork.java:416)
+	at org.nuxeo.ecm.core.work.AbstractWork.runWorkWithTransactionAndCheckExceptions(AbstractWork.java:377)
+	at org.nuxeo.ecm.core.work.AbstractWork.run(AbstractWork.java:338)
+	at org.nuxeo.ecm.core.work.WorkHolder.run(WorkHolder.java:57)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+10:06:13,072 main WARN  [NuxeoConnectionManagerConfiguration] maxActive deprecated dbcp pool attribute usage, should use maxPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:13,072 main WARN  [NuxeoConnectionManagerConfiguration] maxIdle deprecated dbcp pool attribute usage, should use minPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:13,073 main WARN  [NuxeoConnectionManagerConfiguration] maxWait deprecated dbcp pool attribute usage, should use blockingTimeoutMillis geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:13,283 main ERROR [OSGiRuntimeService] Nuxeo Platform Started
+======================================================================
+= Component Loading Status: Pending: 0 / Missing: 1 / Unstarted: 0 / Total: 118
+  * service:org.nuxeo.ecm.csv.core.operation.contrib references missing [target=org.nuxeo.ecm.core.operation.OperationServiceComponent;point=operations]
+====================================================================== {{fState,beforeRun}}
+)10:06:13,894 Nuxeo-Work-csvImporter-1:test:/:csvImport:3778e87d662364c02ce0cd488f288222 ERROR [CSVImporterWork] Line 2: Unable to convert field 'dc:issued' with value '10012010' {{fState,beforeRun}}
+)10:06:13,897 Nuxeo-Work-csvImporter-1:test:/:csvImport:3778e87d662364c02ce0cd488f288222 ERROR [CSVImporterWork] Line 4: The type 'NotExistingType' does not exist {{fState,beforeRun}}
+)10:06:13,900 Nuxeo-Work-csvImporter-1:test:/:csvImport:3778e87d662364c02ce0cd488f288222 ERROR [CSVImporterWork] Line 6: 'Domain' type is not allowed in 'Root' {{fState,beforeRun}}
+)10:06:13,901 Nuxeo-Work-csvImporter-1:test:/:csvImport:3778e87d662364c02ce0cd488f288222 ERROR [CSVImporterWork] Line 7: Unable to convert field 'complexTest:complexItem' with value '{"arrayProp":["1"],"boolProp":invalidBooleanValue,"stringProp":"testString1"}' {{fState,beforeRun}}
+)10:06:13,902 Nuxeo-Work-csvImporter-1:test:/:csvImport:3778e87d662364c02ce0cd488f288222 ERROR [CSVImporterWork] Line 8: Unable to convert field 'complexTest:complexItem' with value '{"dateProp":"2009-02-13BAD04:40:00.00Z"],"boolProp":true,"stringProp":"testString1"}' {{fState,beforeRun}}
+)10:06:13,940 Nuxeo-Work-csvImporter-1:test:/:csvImport:d3630f7d0c98a817b44a0c158d112a43 ERROR [CSVImporterWork] Line 6: Parent document '/folder/folder' does not exist {{fState,beforeRun}}
+)10:06:14,000 Nuxeo-Work-csvImporter-1:test:/:csvImport:0964a8abc20218f42481a17454fc35f3 ERROR [CSVImporterWork] Line 0: Missing 'name' column {{fState,beforeRun}}
+)10:06:14,639 main WARN  [NuxeoConnectionManagerConfiguration] maxActive deprecated dbcp pool attribute usage, should use maxPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:14,640 main WARN  [NuxeoConnectionManagerConfiguration] maxIdle deprecated dbcp pool attribute usage, should use minPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:14,640 main WARN  [NuxeoConnectionManagerConfiguration] maxWait deprecated dbcp pool attribute usage, should use blockingTimeoutMillis geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:14,845 main ERROR [OSGiRuntimeService] Nuxeo Platform Started
+======================================================================
+= Component Loading Status: Pending: 0 / Missing: 1 / Unstarted: 0 / Total: 118
+  * service:org.nuxeo.ecm.csv.core.operation.contrib references missing [target=org.nuxeo.ecm.core.operation.OperationServiceComponent;point=operations]
+====================================================================== {{fState,beforeRun}}
+)10:06:15,287 main WARN  [NuxeoConnectionManagerConfiguration] maxActive deprecated dbcp pool attribute usage, should use maxPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:15,288 main WARN  [NuxeoConnectionManagerConfiguration] maxIdle deprecated dbcp pool attribute usage, should use minPoolSize geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:15,288 main WARN  [NuxeoConnectionManagerConfiguration] maxWait deprecated dbcp pool attribute usage, should use blockingTimeoutMillis geronimo pool attribute instead {{fState,beforeRun}}
+)10:06:15,448 main ERROR [OSGiRuntimeService] Nuxeo Platform Started
+======================================================================
+= Component Loading Status: Pending: 0 / Missing: 1 / Unstarted: 0 / Total: 118
+  * service:org.nuxeo.ecm.csv.core.operation.contrib references missing [target=org.nuxeo.ecm.core.operation.OperationServiceComponent;point=operations]
+====================================================================== {{fState,beforeRun}}
+)
