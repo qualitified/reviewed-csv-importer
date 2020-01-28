@@ -1,6 +1,0 @@
-org/nuxeo/ecm/csv/core/AbstractCSVImporterTest.class
-org/nuxeo/ecm/csv/core/TestCSVImporterCreateMode.class
-org/nuxeo/ecm/csv/core/operation/TestImportOperation.class
-org/nuxeo/ecm/csv/core/TestCSVImporterImportMode.class
-org/nuxeo/ecm/csv/core/lang/test/TestMessages.class
-org/nuxeo/ecm/csv/core/TestCSVImporterImportModeUUID.class
