@@ -20,6 +20,11 @@
 package org.nuxeo.ecm.csv.core;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+import org.nuxeo.runtime.api.Framework;
+import org.nuxeo.runtime.services.config.ConfigurationService;
 
 /**
  * @author <a href="mailto:troger@nuxeo.com">Thomas Roger</a>
@@ -29,17 +34,21 @@ public class CSVImporterOptions implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public static final String LEGACY_DATE_FORMAT_PROP = "nuxeo.csv.import.legacyDateFormat";
+
+    public static final String LEGACY_DATE_FORMAT = "MM/dd/yyyy";
+
     public static final CSVImporterOptions DEFAULT_OPTIONS = new Builder().build();
 
     public static class Builder {
 
         private CSVImporterDocumentFactory CSVImporterDocumentFactory = new DefaultCSVImporterDocumentFactory();
 
-        private String dateFormat = "dd/MM/yyyy HH:mm";
+        private String dateFormat;
 
         private String listSeparatorRegex = "\\|";
 
-        private Character commentMarker = null;
+        private Character commentMarker;
 
         private Character escapeCharacter = '\\';
 
@@ -47,7 +56,7 @@ public class CSVImporterOptions implements Serializable {
 
         private boolean checkAllowedSubTypes = true;
 
-        private boolean sendEmail = false;
+        private boolean sendEmail;
 
         private int batchSize = 50;
 
@@ -110,14 +119,14 @@ public class CSVImporterOptions implements Serializable {
     }
 
     public enum ImportMode {
-        CREATE, IMPORT;
+        CREATE, IMPORT
     }
 
     protected ImportMode importMode;
 
     protected final CSVImporterDocumentFactory CSVImporterDocumentFactory;
 
-    protected final String dateFormat;
+    protected final DateFormat dateFormat;
 
     protected final String listSeparatorRegex;
 
@@ -158,7 +167,7 @@ public class CSVImporterOptions implements Serializable {
             boolean checkAllowedSubTypes, boolean sendEmail, int batchSize, ImportMode importMode) {
         this.CSVImporterDocumentFactory = CSVImporterDocumentFactory;
         CSVImporterDocumentFactory.setImporterOptions(this);
-        this.dateFormat = dateFormat;
+        this.dateFormat = computeDateFormat(dateFormat);
         this.listSeparatorRegex = listSeparatorRegex;
         this.commentMarker = commentMarker;
         this.escapeCharacter = escapeCharacter;
@@ -169,11 +178,21 @@ public class CSVImporterOptions implements Serializable {
         this.importMode = importMode;
     }
 
+    protected DateFormat computeDateFormat(String dateFormat) {
+        if (dateFormat != null) {
+            return new SimpleDateFormat(dateFormat);
+        }
+
+        return Framework.getService(ConfigurationService.class).isBooleanPropertyTrue(LEGACY_DATE_FORMAT_PROP)
+                ? new SimpleDateFormat(LEGACY_DATE_FORMAT)
+                : null;
+    }
+
     public CSVImporterDocumentFactory getCSVImporterDocumentFactory() {
         return CSVImporterDocumentFactory;
     }
 
-    public String getDateFormat() {
+    public DateFormat getDateFormat() {
         return dateFormat;
     }
 

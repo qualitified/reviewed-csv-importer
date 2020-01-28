@@ -27,49 +27,97 @@ import java.io.Serializable;
  */
 public class CSVImportStatus implements Serializable {
 
+    public enum State {
+        SCHEDULED, RUNNING, COMPLETED,
+        /**
+         * @since 9.1
+         */
+        ERROR
+    }
+
     private static final long serialVersionUID = 1L;
 
     private final State state;
 
-    private final int positionInQueue;
+    /**
+     * @deprecated since 9.1
+     */
+    @Deprecated
+    private int positionInQueue;
 
-    private final int queueSize;
+    @Deprecated
+    /**
+     * @deprecated since 9.1
+     */
+    private int queueSize;
 
-    public enum State {
-        SCHEDULED, RUNNING, COMPLETED
-    }
+    private long totalNumberOfDocument;
+
+    private long numberOfProcessedDocument;
 
     public CSVImportStatus(State state) {
-        this(state, 0, 0);
+        this(state, -1L, -1L);
     }
 
+    /**
+     * @deprecated since 9.1
+     */
+    @Deprecated
     public CSVImportStatus(State state, int positionInQueue, int queueSize) {
         this.state = state;
         this.positionInQueue = positionInQueue;
         this.queueSize = queueSize;
     }
 
-    public State getState() {
-        return state;
+    public CSVImportStatus(State state, long numberOfProcessedDocument, long totalNumberOfDocument) {
+        this.state = state;
+        this.numberOfProcessedDocument = numberOfProcessedDocument;
+        this.totalNumberOfDocument = totalNumberOfDocument;
     }
 
+    /**
+     * @since 9.1
+     */
+    public long getNumberOfProcessedDocument() {
+        return numberOfProcessedDocument;
+    }
+
+    /**
+     * @deprecated since 9.1, meaningless use {@link #getNumberOfProcessedDocument()} instead.
+     */
+    @Deprecated
     public int getPositionInQueue() {
         return positionInQueue;
     }
 
+    /**
+     * @deprecated since 9.1, meaningless use {@link #getTotalNumberOfDocument()} instead.
+     */
+    @Deprecated
     public int getQueueSize() {
         return queueSize;
     }
 
-    public boolean isScheduled() {
-        return state == State.SCHEDULED;
+    public State getState() {
+        return state;
+    }
+
+    /**
+     * @since 9.1
+     */
+    public long getTotalNumberOfDocument() {
+        return totalNumberOfDocument;
+    }
+
+    public boolean isComplete() {
+        return state == State.COMPLETED;
     }
 
     public boolean isRunning() {
         return state == State.RUNNING;
     }
 
-    public boolean isComplete() {
-        return state == State.COMPLETED;
+    public boolean isScheduled() {
+        return state == State.SCHEDULED;
     }
 }

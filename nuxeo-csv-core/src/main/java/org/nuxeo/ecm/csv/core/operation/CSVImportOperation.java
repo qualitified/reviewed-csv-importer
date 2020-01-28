@@ -1,5 +1,5 @@
 /*
- * (C) Copyright 2012 Nuxeo SA (http://nuxeo.com/) and others.
+ * (C) Copyright 2017 Nuxeo SA (http://nuxeo.com/) and others.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,10 @@ import org.nuxeo.runtime.api.Framework;
 @Operation(
         id = CSVImportOperation.ID,
         category = Constants.CAT_DOCUMENT,
-        label = "Import"
+        label = "CSVImport"
 )
 public class CSVImportOperation {
+
     public static final String ID = "CSV.Import";
 
     @Context
@@ -56,17 +57,8 @@ public class CSVImportOperation {
         CSVImporterOptions options = new CSVImporterOptions.Builder().sendEmail(mSendReport)
                                                                      .importMode(importMode)
                                                                      .build();
-
         CSVImporter csvImporter = Framework.getService(CSVImporter.class);
-        return csvImporter.launchImport(mSession, mPath, blob.getFile(), blob.getFilename(), options);
+        return csvImporter.launchImport(mSession, mPath, blob, options);
     }
 
-    @OperationMethod
-    public String getStatus(String importID) {
-        if (importID == null || importID.isEmpty()) {
-            return null;
-        }
-        CSVImporter csvImporter = Framework.getService(CSVImporter.class);
-        return csvImporter.getImportStatus(importID).toString();
-    }
 }
