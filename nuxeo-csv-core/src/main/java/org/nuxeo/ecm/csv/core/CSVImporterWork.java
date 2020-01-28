@@ -223,6 +223,8 @@ public class CSVImporterWork extends TransientStoreWork {
         setStatus("Importing");
         openUserSession();
         CSVFormat csvFormat = CSVFormat.DEFAULT.withHeader()
+                                               .withDelimiter(';')
+                                               .withQuote(null)
                                                .withEscape(options.getEscapeCharacter())
                                                .withCommentMarker(options.getCommentMarker());
         try (Reader in = newReader(getBlob()); CSVParser parser = csvFormat.parse(in)) {

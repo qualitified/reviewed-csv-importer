@@ -36,7 +36,7 @@ public class CSVImporterOptions implements Serializable {
 
     public static final String LEGACY_DATE_FORMAT_PROP = "nuxeo.csv.import.legacyDateFormat";
 
-    public static final String LEGACY_DATE_FORMAT = "MM/dd/yyyy";
+    public static final String LEGACY_DATE_FORMAT = "dd/MM/yyyy";
 
     public static final CSVImporterOptions DEFAULT_OPTIONS = new Builder().build();
 

@@ -71,7 +71,7 @@ public class TestCSVImporterImportMode extends AbstractCSVImporterTest {
         assertTrue(contributors.contains("leela"));
         assertFalse(contributors.contains("Administrator"));
         Calendar creationDate = (Calendar) doc.getPropertyValue("dc:created");
-        Date expectedDate = DateParser.parseW3CDateTime("2012-12-12T00:00:00");
+        Date expectedDate = DateParser.parseW3CDateTime("2012-12-11T23:00:00");
         assertEquals(expectedDate.getTime(), creationDate.getTimeInMillis());
         assertNull(doc.getPropertyValue("dc:modified"));
 
@@ -85,10 +85,10 @@ public class TestCSVImporterImportMode extends AbstractCSVImporterTest {
         assertTrue(contributors.contains("leela"));
         assertFalse(contributors.contains("Administrator"));
         creationDate = (Calendar) doc.getPropertyValue("dc:created");
-        expectedDate = DateParser.parseW3CDateTime("2012-12-12T00:00:00.000Z");
+        expectedDate = DateParser.parseW3CDateTime("2012-12-11T23:00:00.000Z");
         assertEquals(expectedDate.getTime(), creationDate.getTimeInMillis());
         Calendar modificationDate = (Calendar) doc.getPropertyValue("dc:modified");
-        expectedDate = DateParser.parseW3CDateTime("2015-04-12T00:00:00.000Z");
+        expectedDate = DateParser.parseW3CDateTime("2015-04-11T23:00:00.000Z");
         assertEquals(expectedDate.getTime(), modificationDate.getTimeInMillis());
     }
 }
